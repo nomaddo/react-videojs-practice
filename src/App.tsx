@@ -4,7 +4,7 @@ import { render } from "react-dom";
 import VideoPlayer from "./videoplayer";
 
 const videoJsOptions = {
-  autoplay: true,
+  autoplay: false,
   controls: true,
   sources: [
     {
@@ -15,6 +15,6 @@ const videoJsOptions = {
 };
 
 function App() {
-  return <VideoPlayer { ...videoJsOptions } />
+  return <VideoPlayer {...videoJsOptions} />;
 }
 export default App;

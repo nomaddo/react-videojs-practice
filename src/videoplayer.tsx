@@ -2,10 +2,17 @@ import * as React from "react";
 import videojs from "video.js";
 import "video.js/dist/video-js.css";
 
+type VideoPlayerProps = videojs.PlayerOptions;
 export default class VideoPlayer extends React.Component {
-  player: any;
-  videoNode: any;
-  props: any;
+  player: videojs.Player | undefined;
+  videoNode: HTMLVideoElement | null;
+  props: VideoPlayerProps;
+
+  constructor(props: VideoPlayerProps) {
+    super(props);
+    this.videoNode = null;
+    this.props = props;
+  }
 
   componentDidMount() {
     // instantiate Video.js
